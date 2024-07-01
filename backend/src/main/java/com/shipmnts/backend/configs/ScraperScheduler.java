@@ -4,11 +4,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
 
-import com.shipmnts.backend.entities.Book;
 import com.shipmnts.backend.repositories.BookRepository;
 import com.shipmnts.backend.services.BookService;
-
-import java.util.List;
 
 @Component
 public class ScraperScheduler {
@@ -20,16 +17,18 @@ public class ScraperScheduler {
     private BookService bookService;
 
     // Schedule the method to run once every day at 2 AM
-    @Scheduled(cron = "0 0 2 * * ?")
+    // @Scheduled(cron = "0 0 2 * * ?")
+    
     // Schedule the method to run every 7 seconds
-    // @Scheduled(fixedRate = 7000)
+    @Scheduled(fixedRate = 7000)
     public void scheduleScraping() {
 
         // Delete all existing data
         bookRepository.deleteAll();
 
         if (bookRepository.count() == 0) {
-            bookService.getBooks(1, 10);
+            // scrp all data aviable
+            bookRepository.saveAll(bookService.scrapBooks(1, Integer.MAX_VALUE));
             System.out.println("Scheduling done");
         }
     }

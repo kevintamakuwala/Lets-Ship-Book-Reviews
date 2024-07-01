@@ -13,20 +13,23 @@ import com.shipmnts.backend.entities.Book;
 import com.shipmnts.backend.responses.BookRes;
 import com.shipmnts.backend.services.BookService;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-
 @RestController
+@RequestMapping("/books")
 public class BookController {
     @Autowired
     private BookService bookService;
 
-    // GET /books?page=1&size=10
-    @GetMapping("/books")
-    public ResponseEntity<List<BookRes>> getBooks(int page, int size) {
+    // GET /books?page=?&size=?
+    @GetMapping
+    public ResponseEntity<List<BookRes>> getBooks(
+            @RequestParam(defaultValue = "1") int page,
+            @RequestParam(defaultValue = (Integer.MAX_VALUE) + "") int size) {
 
-        List<Book> books = bookService.getBooks(page, size);
-
+        List<Book> books = bookService.scrapBooks(page, size);
+        bookService.saveBooks(books);
         // convert book into bookRes
         List<BookRes> bookRes = convertBookToBookRes(books);
 
