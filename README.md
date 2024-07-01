@@ -43,6 +43,6 @@ Before setting up Project, ensure you have the following prerequisites installed
 
 ### Accessing Project
 
-Once both the backend and frontend are running, you can access ByteBattles by navigating to the provided URLs in your web browser:
+Once the backend is running, you can access Project by navigating to the provided URLs in your web browser:
 
 - **Backend**: [http://localhost:8000](http://localhost:8000)
