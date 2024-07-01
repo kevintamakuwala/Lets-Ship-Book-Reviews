@@ -1,4 +1,4 @@
-# Shipmnts-Task2# ByteBattles - Competitive Programming Platform
+# Shipmnts-Task2
 
 Youtube Demo: [https://shipmnts.kevintamakuwala.me/](https://shipmnts.kevintamakuwala.me/)
 ## Tech Stack Used:
