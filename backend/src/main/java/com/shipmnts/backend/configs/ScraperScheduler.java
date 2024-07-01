@@ -17,10 +17,10 @@ public class ScraperScheduler {
     private BookService bookService;
 
     // Schedule the method to run once every day at 2 AM
-    // @Scheduled(cron = "0 0 2 * * ?")
-    
+    @Scheduled(cron = "0 0 2 * * ?")
+
     // Schedule the method to run every 7 seconds
-    @Scheduled(fixedRate = 7000)
+    // @Scheduled(fixedRate = 7000)
     public void scheduleScraping() {
 
         // Delete all existing data
