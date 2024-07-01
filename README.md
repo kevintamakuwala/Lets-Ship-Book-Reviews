@@ -1,6 +1,6 @@
 # Shipmnts-Task2
 
-Youtube Demo: [https://shipmnts.kevintamakuwala.me/](https://shipmnts.kevintamakuwala.me/)
+Demo: [https://shipmnts.kevintamakuwala.me/](https://shipmnts.kevintamakuwala.me/)
 ## Tech Stack Used:
 - Springboot
 - AWS EC2, RDS, Nginx, Certbot
@@ -19,7 +19,7 @@ Before setting up Project, ensure you have the following prerequisites installed
 
 - **Java Development Kit (JDK)**: Required for running the Spring Boot backend.
 - **MySQL Database**: Database management system for storing application data.
-- **IDE (Integrated Development Environment)**: Recommended IDEs include IntelliJ IDEA or VS Code for backend and frontend development.
+- **IDE (Integrated Development Environment)**: Recommended IDEs include IntelliJ IDEA or VS Code for backend development.
 
 ### Backend Setup (Spring Boot)
 
